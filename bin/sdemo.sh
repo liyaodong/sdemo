@@ -18,6 +18,8 @@ function setup_project() {
     echo '生成项目文件'
     touch "src/$project_name.scss"
     touch "src/$project_name.coffee"
+    echo '安装Grunt需要的包'
+    npm install --save
     echo 'Enjoy coding!'
 }
 
