@@ -4,12 +4,13 @@ module.exports = (grunt) ->
 
     pkg: grunt.file.readJSON 'package.json'
 
-    # custom settings
+    # custom settings start
     paths:
       src: './src'
       output: './assets'
       css: '<%= paths.output %>/css'
       js: '<%= paths.output %>/js'
+    # custom settings end
 
     sass:
       styles:
@@ -18,14 +19,14 @@ module.exports = (grunt) ->
           bundleExec: true
           sourcemap: 'none'
         files:
-          '<%= paths.css %>/base.css': '<%= paths.src %>/base.scss'
+          '<%= paths.css %>/*|ProjectName|*.css': '<%= paths.src %>/*|ProjectName|*.scss'
 
     coffee:
       src:
         options:
           bare: true
         files:
-          '<%= paths.js %>/main.js': '<%= paths.src %>/main.coffee'
+          '<%= paths.js %>/*|ProjectName|*.js': '<%= paths.src %>/*|ProjectName|*.coffee'
 
     watch:
       styles:
