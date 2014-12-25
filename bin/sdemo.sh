@@ -16,6 +16,8 @@ function setup_project() {
     bundle install
     echo '安装Grunt需要的包'
     npm install --save
+    echo '清理git'
+    rm -rf .git
     echo 'Enjoy coding!'
 }
 
